@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Property from './components/property/property';
 import Progress from './components/progress/progress';
 import Coin from './components/coin/coin';
 
@@ -16,6 +17,7 @@ class App extends Component {
       <div className="main">
         <div className="main-left">
           <div className="assets">
+            <Property/>
           </div>
           <div className="coins">
             <Coin/>
