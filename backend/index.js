@@ -6,6 +6,8 @@ var cors = require('cors')
 var app = express();
 app.use(cors())
 
+1519515393
+1519601793
 let port = 8080;
 let earliest_timestamp = 1439164800; //GMT: Monday, August 10, 2015 12:00:00 AM
 let current_timestamp = earliest_timestamp;
@@ -24,7 +26,7 @@ function update(){
 		current_timestamp = earliest_timestamp;
 	}
 	days_passed += 1;
-	current_timestamp += days_passed * seconds;
+	current_timestamp = earliest_timestamp + (days_passed * seconds);
 	axios.get(api_endpoint + "fsym=BTC&tsym=USD&toTs=" + current_timestamp + "&avgType=MidHighLow")
 	     .then(function(response){
 	     	btc_rate = (response.data.USD);
@@ -37,7 +39,7 @@ function update(){
      	 .then(function(response){
      	    xrp_rate = (response.data.USD);
      	 });
-	console.log("Updated", btc_rate, eth_rate, xrp_rate);
+	console.log("Updated", btc_rate, eth_rate, xrp_rate, new Date(current_timestamp * 1000));
 }
 
 app.get('/', function(req, res) {
