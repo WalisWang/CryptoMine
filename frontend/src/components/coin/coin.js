@@ -10,7 +10,8 @@ class Coin extends Component {
     constructor(props) {
         super();
         this.state = {
-            values: [2, 3, 6]
+            values: [2, 3, 6],
+            types: [bitcoin, ripple, ethereum]
         }
     }
 
@@ -18,7 +19,12 @@ class Coin extends Component {
         return(
             <div className="coins">
                 {this.state.values.map((val, index) => (
-                    <div>
+                    <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+                        <img src={this.state.types[index]}>
+                        </img>
+                        <span>{val}$</span>
+                        <button className="coin-button"> BUY </button>
+                        <button className="coin-button"> SELL </button>
                     </div>
                 ))}
             </div>

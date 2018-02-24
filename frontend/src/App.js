@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Progress from './components/progress/progress';
+import Coin from './components/coin/coin';
+
+
 class App extends Component {
   constructor() {
     super();
@@ -16,6 +18,7 @@ class App extends Component {
           <div className="assets">
           </div>
           <div className="coins">
+            <Coin/>
           </div>
         </div>
         <div className="main-right">

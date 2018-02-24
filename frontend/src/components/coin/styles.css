@@ -1,0 +1,11 @@
+.coins {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.coin-button {
+  font-family: 'Nunito', sans-serif;
+  background-color: #d62d20; 
+  padding: 2px;
+}
