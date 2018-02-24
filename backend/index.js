@@ -1,7 +1,11 @@
 var express = require('express');
 var axios = require('axios');
+var cors = require('cors')
+
 
 var app = express();
+app.use(cors())
+
 let port = 8080;
 let earliest_timestamp = 1439164800; //GMT: Monday, August 10, 2015 12:00:00 AM
 let current_timestamp = earliest_timestamp;
@@ -40,7 +44,8 @@ app.get('/', function(req, res) {
 	let ret = {
 		btc : btc_rate,
 		eth : eth_rate,
-		xrp : xrp_rate
+		xrp : xrp_rate,
+		timestamp : current_timestamp
 	};
     res.send(JSON.stringify(ret));
 });
