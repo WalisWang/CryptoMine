@@ -56,4 +56,4 @@ app.listen(port, function(){
     console.log("Listening on port " + port);
 });
 
-setInterval(update, 500);
+setInterval(update, 3000);
