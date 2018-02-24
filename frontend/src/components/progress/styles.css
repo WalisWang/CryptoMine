@@ -1,0 +1,58 @@
+.progress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.progress-bar {
+  width: 1%;
+  height: 20px;
+  background-color: #008744;
+}
+
+.mining-item {
+  width: 100%;
+  display: flex;
+}
+
+.mining-left  {
+  flex: 1;
+}
+
+.mining-right  {
+  flex: 1;
+}
+
+.mining-machine {
+	width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+	box-sizing: border-box;
+  overflow: hidden;	
+  transform: translatey(0px);
+	animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+button {
+  border: 2px solid white;
+  background-color: #3b3d3b;
+  position: relative;
+  margin: 10px;
+  height: 50px;
+  width: 55%; 
+  font-family: "Play", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 20px;
+  color: white;
+  bottom: 10px;
+}
