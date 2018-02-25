@@ -3,11 +3,11 @@
 Thank you for your interest in contributing to CryptoMiner! There are many ways to contribute, and we appreciate all of them.
 
 ## Short Links to Important Resources:
-* [Bug report](https://www.google.com)
+* [Bug report](# How to report a bug)
 * Communcations: Rishabh Asthana {asthana4@illinois.edu}, Wanli Wang {wwang128@illinois.edu}
 
 ## How to submit changes: 
-First of all, we recommend you to read this [guideline](https://www.google.com) first for how to contribute. Here are the essential steps to follow when you try to submit the changes: 
+First of all, we recommend you to read this [guideline](https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution) first for how to contribute. Here are the essential steps to follow when you try to submit the changes: 
 
 * [Communicating effectively](https://opensource.guide/how-to-contribute/#communicating-effectively)
 
