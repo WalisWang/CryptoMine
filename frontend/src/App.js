@@ -19,9 +19,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      machine_prices: [2,4,9,10,11,24,56,89,100,120],
       machines_owned: [0,0,0,0,0],
-      usd_amt: 10000,
+      usd_amt: 1000,
       btc_amt: 0.00,
       eth_amt: 0.00,
       xrp_amt: 0.00,
@@ -37,8 +36,14 @@ class App extends Component {
   
   buy_machine(index){
       let current = this.state.machines_owned;
-      current[index] += 1;
-      this.setState({machines_owned: current});
+      let current_btc_val = this.state.btc;
+      let current_usd = this.state.usd_amt;
+      
+      if(current_usd >= current_btc_val * (index+1) && current[index] <= 9){
+          current[index] += 1;
+          current_usd -= current_btc_val * (index+1);
+          this.setState({machines_owned: current, usd_amt: current_usd});          
+      }
   }
     
   buy_btc(){
@@ -106,16 +111,17 @@ class App extends Component {
           axios.get("http://localhost:8080/")
           .then(function(response){
            let data = response.data;
-           let new_btc_amt = btc_amt + machines.map(function(item, index){return item*(1/data.difficulty)}).reduce(reducer);
-           let new_eth_amt = eth_amt + machines.map(function(item, index){return item*((Math.random()*2*(index+1) )/data.difficulty)}).reduce(reducer);
-           let new_xrp_amt = xrp_amt + machines.map(function(item, index){return item*((Math.random()*10*(index+1))/data.difficulty)}).reduce(reducer);
+           let scale = data.difficulty;
+           let new_btc_amt = btc_amt + machines.map(function(item, index){return item*(Math.random()*2*(index+1)/scale)}).reduce(reducer);
+           let new_eth_amt = eth_amt + machines.map(function(item, index){return item*((Math.random()*2*(index+2) )/scale)}).reduce(reducer);
+           let new_xrp_amt = xrp_amt + machines.map(function(item, index){return item*((Math.random()*10*(index+3))/scale)}).reduce(reducer);
            let net_asset_value = usd_amt + (new_btc_amt * data.btc) + (new_eth_amt * data.eth) + (new_xrp_amt * data.xrp);
            let date = data.timestamp * 1000;
            date = new Date(date);
            date = date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear();
               
           self.setState({btc: data.btc, eth: data.eth, xrp: data.xrp, timestamp: date, difficulty: data.difficulty, total: net_asset_value, btc_amt: new_btc_amt, eth_amt: new_eth_amt, xrp_amt: new_xrp_amt});
-          //console.log(JSON.stringify(self.state))
+          console.log(JSON.stringify(self.state))
           });
       },1000);
   }
@@ -146,11 +152,11 @@ class App extends Component {
         </div>
         <div className="main-right">
           <div className="mining">
-            <Progress ex={ex0}/>
-            <Progress ex={ex1}/>
-            <Progress ex={ex2}/>
-            <Progress ex={ex3}/>
-            <Progress ex={ex4}/>
+            <Progress ex={ex0} index={0} buy_machine={this.buy_machine} owned={this.state.machines_owned[0]} btc={this.state.btc}/>
+            <Progress ex={ex1} index={1} buy_machine={this.buy_machine} owned={this.state.machines_owned[1]} btc={this.state.btc}/>
+            <Progress ex={ex2} index={2} buy_machine={this.buy_machine} owned={this.state.machines_owned[2]} btc={this.state.btc}/>
+            <Progress ex={ex3} index={3} buy_machine={this.buy_machine} owned={this.state.machines_owned[3]} btc={this.state.btc}/>
+            <Progress ex={ex4} index={4} buy_machine={this.buy_machine} owned={this.state.machines_owned[4]} btc={this.state.btc}/>
           </div>
         </div>
       </div>
