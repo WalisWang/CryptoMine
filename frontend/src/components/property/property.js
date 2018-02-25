@@ -24,9 +24,8 @@ class Property extends Component {
         let btc = props.amounts[0].toFixed(2).toLocaleLowerCase('en');
         let eth = props.amounts[1].toFixed(2).toLocaleLowerCase('en');
         let xrp = props.amounts[2].toFixed(2).toLocaleLowerCase('en');
-
-        console.log(JSON.stringify(props));
-        this.setState({total: total, bit:btc, eth: eth, rip:xrp});
+        let usd = props.amounts[3].toFixed(2).toLocaleLowerCase('en');
+        this.setState({total: total, bit:btc, eth: eth, rip:xrp, usd:usd});
     }
 
     render() {
@@ -35,7 +34,7 @@ class Property extends Component {
                 <div className="total">
                     <div className="icon-with-text">
                         <img src={total} alt="total" className="mon-icon"/>
-                        <p className="img-des">Total Property</p>
+                        <p className="img-des">Total Assets</p>
                         <p className="number">{this.state.total}</p>
                     </div>
                 </div>
@@ -43,9 +42,9 @@ class Property extends Component {
                     <div className="fund-item">
                         <div style={{flex: 1}}>
                             <img src={fund} alt="fund" className="fund-icon"></img>   
-                            <p className="img-des">Fund</p>
+                            <p className="img-des">Funds</p>
                         </div>
-                        <div className="fund-val">$457567</div>
+                        <div className="fund-val">${this.state.usd}</div>
                     </div>
                     <div style={{flex: 1, display: "flex", flexDirection: "row"}}>
                         <div className="bit-with-text">
