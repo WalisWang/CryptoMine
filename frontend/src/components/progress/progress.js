@@ -22,13 +22,18 @@ class Progress extends Component {
                             <img src={this.props.ex} alt={ex0}/>
                         </div>
                     </div>
+                    <div className="mining-mid">
+                       <p class="speed"> {this.props.speed}X
+                            <span class="tooltiptext">Mining Speed</span>
+                        </p>
+                    </div>
                     <div className="mining-right">
                         <div className="mining-count">
                             {this.props.owned} /10
                         </div>
                         <div className="mining-tag">
                             <button className="mine-button" onClick={()=>this.props.buy_machine(this.props.index)}>
-                                <span style={{backgroundColor: "coral", padding: "10px"}}>${Number(this.props.btc * (this.props.index + 1)).toFixed(2)}</span>
+                                <span style={{backgroundColor: "coral", padding: "10px", minWidth: "250px"}}>${Number(this.props.btc * (this.props.index + 1)).toFixed(2)}</span>
                                 <span style={{backgroundColor: "grey", padding: "10px"}}>BUY ONE</span>
                             </button>
                         </div>
