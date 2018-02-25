@@ -33,6 +33,7 @@ class Progress extends Component {
                         </div>
                         <div className="mining-tag">
                             <button className="mine-button" onClick={()=>this.props.buy_machine(this.props.index)}>
+                                <span style={{backgroundColor: "coral", padding: "10px"}}>${Number(500 * (this.props.index + 1) + Math.pow(10, this.props.owned)).toFixed(2) }</span>
                                 <span className="mine-price" style={{backgroundColor: "coral", padding: "10px"}}>${Number(this.props.btc * (this.props.index + 1)* (Math.pow(2,this.props.owned))).toFixed(2) }
                                     <span class="tooltiptext">Price of {this.props.speed}X-speed Mining Machine</span>
                                 </span>

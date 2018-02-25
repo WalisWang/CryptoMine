@@ -12,7 +12,7 @@ class Property extends Component {
     constructor(props) {
         super();
         this.state = {
-            total: "$" + Number(1000).toFixed(2).toLocaleString('en'),
+            total: "$" + Number(5000).toFixed(2).toLocaleString('en'),
             bit: 0.00,
             dog: 0.00,
             rip: 0.00,
