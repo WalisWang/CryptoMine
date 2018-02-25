@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './styles.css'
 import total from '../../assets/money-bag.png'
 import bitcoin from '../../assets/bitcoin.png'
-import dogecoin from '../../assets/dogecoin.png'
+import ethereum from '../../assets/ethereum.png'
 import ripple from '../../assets/ripplecoin.png'
 
 
@@ -36,12 +36,12 @@ class Property extends Component {
                     </div>
                     <div className="bit-with-text">
                         <img src={ripple} alt="ripple" className="bit-icon"></img>
-                        <p className="img-des">ripplecoin</p>
+                        <p className="img-des">ripple</p>
                         <p>{this.state.rip}</p>
                     </div>
                     <div className="bit-with-text">
-                        <img src={dogecoin} alt="dogecoin" className="bit-icon"></img>
-                        <p className="img-des">dogecoin</p>
+                        <img src={ethereum} alt="ethereum" className="bit-icon"></img>
+                        <p className="img-des">ethereum</p>
                         <p>{this.state.dog}</p>
                     </div>
                 </div>
