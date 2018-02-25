@@ -39,9 +39,9 @@ class App extends Component {
       let current_btc_val = this.state.btc;
       let current_usd = this.state.usd_amt;
       
-      if(current_usd >= current_btc_val * (index+1) && current[index] <= 9){
+      if(current_usd >= current_btc_val * (index+1) * Math.pow(2, current[index]) && current[index] <= 9){
           current[index] += 1;
-          current_usd -= current_btc_val * (index+1);
+          current_usd -= (current_btc_val * (index+1)) * Math.pow(2, current[index]);
           this.setState({machines_owned: current, usd_amt: current_usd});          
       }
   }
@@ -103,18 +103,15 @@ class App extends Component {
       setInterval(function(){
           
           var usd_amt = self.state.usd_amt | 0;
-          var btc_amt = self.state.btc_amt | 0;
-          var eth_amt = self.state.eth_amt | 0;
-          var xrp_amt = self.state.xrp_amt | 0;
           var machines = self.state.machines_owned;
 
           axios.get("http://localhost:8080/")
           .then(function(response){
            let data = response.data;
            let scale = data.difficulty;
-           let new_btc_amt = btc_amt + machines.map(function(item, index){return item*(Math.random()*2*(index+1)/scale)}).reduce(reducer);
-           let new_eth_amt = eth_amt + machines.map(function(item, index){return item*((Math.random()*2*(index+2) )/scale)}).reduce(reducer);
-           let new_xrp_amt = xrp_amt + machines.map(function(item, index){return item*((Math.random()*10*(index+3))/scale)}).reduce(reducer);
+           let new_btc_amt = self.state.btc_amt + machines.map(function(item, index){return item*(Math.random()*2*(index+1)/scale)}).reduce(reducer) | 0;
+           let new_eth_amt = self.state.eth_amt + machines.map(function(item, index){return item*((Math.random()*2*(index+2) )/scale)}).reduce(reducer) | 0;
+           let new_xrp_amt = self.state.xrp_amt + machines.map(function(item, index){return item*((Math.random()*10*(index+3))/scale)}).reduce(reducer) | 0;
            let net_asset_value = usd_amt + (new_btc_amt * data.btc) + (new_eth_amt * data.eth) + (new_xrp_amt * data.xrp);
            let date = data.timestamp * 1000;
            date = new Date(date);
@@ -131,6 +128,7 @@ class App extends Component {
   render() {
     let vals = [this.state.btc, this.state.xrp, this.state.eth];
     let coin_amounts = [this.state.btc_amt, this.state.eth_amt, this.state.xrp_amt, this.state.usd_amt];
+    let f = 0.5+Math.random();
     return (
       <div className="main">
         <div className="main-left">
@@ -152,11 +150,19 @@ class App extends Component {
         </div>
         <div className="main-right">
           <div className="mining">
+<<<<<<< HEAD
             <Progress speed={1} ex={ex0} index={0} buy_machine={this.buy_machine} owned={this.state.machines_owned[0]} btc={this.state.btc}/>
             <Progress speed={2} ex={ex1} index={1} buy_machine={this.buy_machine} owned={this.state.machines_owned[1]} btc={this.state.btc}/>
             <Progress speed={4}  ex={ex2} index={2} buy_machine={this.buy_machine} owned={this.state.machines_owned[2]} btc={this.state.btc}/>
             <Progress speed={8} ex={ex3} index={3} buy_machine={this.buy_machine} owned={this.state.machines_owned[3]} btc={this.state.btc}/>
             <Progress speed={16} ex={ex4} index={4} buy_machine={this.buy_machine} owned={this.state.machines_owned[4]} btc={this.state.btc}/>
+=======
+            <Progress ex={ex0} index={0} buy_machine={this.buy_machine} owned={this.state.machines_owned[0]} btc={this.state.btc*f}/>
+            <Progress ex={ex1} index={1} buy_machine={this.buy_machine} owned={this.state.machines_owned[1]} btc={this.state.btc*f}/>
+            <Progress ex={ex2} index={2} buy_machine={this.buy_machine} owned={this.state.machines_owned[2]} btc={this.state.btc*f}/>
+            <Progress ex={ex3} index={3} buy_machine={this.buy_machine} owned={this.state.machines_owned[3]} btc={this.state.btc*f}/>
+            <Progress ex={ex4} index={4} buy_machine={this.buy_machine} owned={this.state.machines_owned[4]} btc={this.state.btc*f}/>
+>>>>>>> 51e3fb71cbb7633fcf9277604f3fde8cd6531993
           </div>
         </div>
       </div>
