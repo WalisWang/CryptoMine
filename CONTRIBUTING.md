@@ -3,7 +3,7 @@
 Thank you for your interest in contributing to CryptoMiner! There are many ways to contribute, and we appreciate all of them.
 
 ## Short Links to Important Resources:
-* [Bug report](# How to report a bug)
+* Open up a issue, we would try to respond as well we can
 * Communcations: Rishabh Asthana {asthana4@illinois.edu}, Wanli Wang {wwang128@illinois.edu}
 
 ## How to submit changes: 
