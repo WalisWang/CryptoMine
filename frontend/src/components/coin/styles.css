@@ -1,11 +1,30 @@
-.coins {
+.coin-item {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 30px;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .coin-button {
   font-family: 'Nunito', sans-serif;
-  background-color: #d62d20; 
-  padding: 2px;
+  background-color: #5b7dba; 
+  font-size: 16px;
+  font-weight: lighter;
+  width: 80px;
+  align-items: flex-end;
+  margin: 10px;
+  height: 50px;
+  color: white;
+  float: right;
+}
+
+.coin-icon {
+  width: 50px;
+}
+
+#boi{
+  display: flex;
+  margin-left: auto;
 }

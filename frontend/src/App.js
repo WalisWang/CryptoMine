@@ -7,12 +7,14 @@ import axios from 'axios';
 
 
 class App extends Component {
+
   constructor() {
     super();
     this.state = {
       machine_prices: [2,4,9,10,11,24,56,89,100,120]
     }
   }
+
   componentDidMount(){
       var self = this;
       setInterval(function(){
@@ -23,9 +25,10 @@ class App extends Component {
            self.setState({btc: data.btc, eth: data.eth, xrp: data.xrp, timestamp: data.timestamp});
           });
       },3000);
-      
   }
+
   render() {
+    let vals = [this.state.btc, this.state.eth, this.state.xrp];
     return (
       <div className="main">
         <div className="main-left">
@@ -33,7 +36,8 @@ class App extends Component {
             <Property/>
           </div>
           <div className="coins">
-            <Coin/>
+            <Coin coin_values={vals}/>
+            {/*<Coin/>*/}
           </div>
         </div>
         <div className="main-right">

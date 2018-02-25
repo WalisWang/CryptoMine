@@ -2,15 +2,15 @@
 .main {
   display: flex;
   box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: #3b3d3b;
   padding: 50px;
+  margin: 0;
 }
 
 .main-left {
   flex: 1;
-  background:coral;
 }
 
 .main-right {
@@ -21,9 +21,10 @@
 
 .assets {
   height: 40%;
+  background-color: #c64e3e;
 }
 
 .coins {
   height: 60%;
-  background:#d62d20;
+  background-color:#f6cb5b;
 }
