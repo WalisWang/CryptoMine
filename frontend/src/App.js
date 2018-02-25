@@ -155,7 +155,6 @@ class App extends Component {
             <Progress speed={3}  ex={ex2} index={2} buy_machine={this.buy_machine} owned={this.state.machines_owned[2]} btc={this.state.btc}/>
             <Progress speed={4} ex={ex3} index={3} buy_machine={this.buy_machine} owned={this.state.machines_owned[3]} btc={this.state.btc}/>
             <Progress speed={5} ex={ex4} index={4} buy_machine={this.buy_machine} owned={this.state.machines_owned[4]} btc={this.state.btc}/>
-
           </div>
         </div>
       </div>
