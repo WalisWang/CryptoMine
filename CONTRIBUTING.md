@@ -3,7 +3,7 @@
 Thank you for your interest in contributing to CryptoMiner! There are many ways to contribute, and we appreciate all of them.
 
 ## Short Links to Important Resources:
-* [How to submit changes](##How to submit changes)
+* [How to submit changes](#How to submit changes)
 * bugs: issue tracker / bug report tool
 * communcations: forum link, developer list, IRC/email, Slack, etc.
 
