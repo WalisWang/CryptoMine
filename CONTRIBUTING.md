@@ -2,17 +2,19 @@
 
 Thank you for your interest in contributing to CryptoMiner! There are many ways to contribute, and we appreciate all of them.
 
-
 ## Short Links to Important Resources:
-* docs: handbook / roadmap (you'll learn more about this in the roadmapping session)
+* [How to submit changes](##How to submit changes)
 * bugs: issue tracker / bug report tool
 * communcations: forum link, developer list, IRC/email, Slack, etc.
 
 ## How to submit changes: 
-First of all, we recommend you to read [the guideline](https://www.google.com) first for how to contribute. Here are the major steps to follow when you wnat to make the change. 
-* Communicating effectively
-* Gathering context
-* Opening a pull request
+First of all, we recommend you to read this [guideline](https://www.google.com) first for how to contribute. Here are the essential steps to follow when you try to submit the changes: 
+
+* [Communicating effectively](https://opensource.guide/how-to-contribute/#communicating-effectively)
+
+* [Gathering context](https://opensource.guide/how-to-contribute/#gathering-context)
+
+* [Opening a pull request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
 
 ## How to report a bug: 
 A bug is a demonstrable problem that is caused by the code in the repository. Thank you for contributing to report a bug!
