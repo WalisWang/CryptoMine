@@ -142,7 +142,6 @@ class App extends Component {
                 } 
                 date={this.state.timestamp}
                 />
-            {/*<Coin/>*/}
           </div>
         </div>
         <div className="main-right">

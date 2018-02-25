@@ -35,16 +35,19 @@ class Property extends Component {
                     <div className="icon-with-text">
                         <img src={total} alt="total" className="mon-icon"/>
                         <p className="img-des">Total Assets</p>
-                        <p className="number">{this.state.total}</p>
+                        <p className="number">{this.state.total}
+                            <span class="tooltiptext">Total Assets = Cash Amount + Coin Value</span>
+                        </p>
                     </div>
                 </div>
                 <div className="bit">
                     <div className="fund-item">
                         <div style={{flex: 1}}>
                             <img src={fund} alt="fund" className="fund-icon"></img>   
-                            <p className="img-des">Funds</p>
+                            <p className="img-des">Cash Amount</p>
                         </div>
-                        <div className="fund-val">${this.state.usd}</div>
+                        <div className="fund-val">${this.state.usd}
+                        </div>
                     </div>
                     <div style={{flex: 1, display: "flex", flexDirection: "row"}}>
                         <div className="bit-with-text">
