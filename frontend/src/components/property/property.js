@@ -11,11 +11,21 @@ class Property extends Component {
     constructor(props) {
         super();
         this.state = {
-            total: "$" + Number(123443645).toLocaleString('en'),
-            bit: 234,
-            dog: 3464,
-            rip: 546,
+            total: "$" + Number(10000).toFixed(3).toLocaleString('en'),
+            bit: 0,
+            dog: 0,
+            rip: 0,
         }
+    }
+    
+    componentWillReceiveProps(props){
+        let total = "$" + (props.total).toFixed(2).toLocaleLowerCase('en');
+        let btc = props.amounts[0].toFixed(2).toLocaleLowerCase('en');
+        let eth = props.amounts[1].toFixed(2).toLocaleLowerCase('en');
+        let xrp = props.amounts[2].toFixed(2).toLocaleLowerCase('en');
+
+        console.log(JSON.stringify(props));
+        this.setState({total: total, bit:btc, dog: eth, rip:xrp});
     }
 
     render() {
