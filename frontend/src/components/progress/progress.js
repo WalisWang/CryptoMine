@@ -42,7 +42,7 @@ class Progress extends Component {
                 </div>
                 <div className="mining-right">
                     <button onClick={move}>Price {this.props.price}</button> 
-                    <button onClick={stop}>Stop me</button> 
+                    <button onClick={()=>this.props.callback(0)}>Stop me</button> 
                 </div>
             </div>
         )
