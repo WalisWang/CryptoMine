@@ -4,9 +4,13 @@ import Property from './components/property/property';
 import Progress from './components/progress/progress';
 import Coin from './components/coin/coin';
 import axios from 'axios';
+import ex0 from './assets/ex0.png'
+import ex1 from './assets/ex1.png'
+import ex2 from './assets/ex2.png'
+import ex3 from './assets/ex3.png'
+import ex4 from './assets/ex4.png'
 
 
-//let current = "";
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -143,7 +147,11 @@ class App extends Component {
         </div>
         <div className="main-right">
           <div className="mining">
-            <Progress callback={this.buy_machine}/>
+            <Progress ex={ex0}/>
+            <Progress ex={ex1}/>
+            <Progress ex={ex2}/>
+            <Progress ex={ex3}/>
+            <Progress ex={ex4}/>
           </div>
         </div>
       </div>
