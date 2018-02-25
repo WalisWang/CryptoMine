@@ -22,6 +22,6 @@ Frontend and Backend are organised into separate folders, and in this scenario w
 ## OTHER SOURCES OF DOCUMENTATION
 
 ## Contributor Guide
-[I'm a relative reference to a repository file](./CONTRIBUTING.md)
+[Contibuting to CryptoMiner](./CONTRIBUTING.md)
 
 ## License 
