@@ -6,12 +6,11 @@ var cors = require('cors')
 var app = express();
 app.use(cors())
 
-1519515393
-1519601793
 let port = 8080;
 let earliest_timestamp = 1439164800; //GMT: Monday, August 10, 2015 12:00:00 AM
 let current_timestamp = earliest_timestamp;
 let days_passed = 0;
+let difficulty = 0;
 let seconds = 86400;
 let symbol = "ETH"
 let api_endpoint = "https://min-api.cryptocompare.com/data/dayAvg?"; 
@@ -24,6 +23,10 @@ function update(){
 	if (days_passed > 900){
 		days_passed = 0;
 		current_timestamp = earliest_timestamp;
+		difficulty = 0;
+	}
+	if (days_passed % 14 == 0){
+		difficulty += 1;
 	}
 	days_passed += 1;
 	current_timestamp = earliest_timestamp + (days_passed * seconds);
@@ -39,7 +42,7 @@ function update(){
      	 .then(function(response){
      	    xrp_rate = (response.data.USD);
      	 });
-	console.log("Updated", btc_rate, eth_rate, xrp_rate, new Date(current_timestamp * 1000));
+	console.log("Updated", btc_rate, eth_rate, xrp_rate, new Date(current_timestamp * 1000), difficulty);
 }
 
 app.get('/', function(req, res) {
@@ -47,7 +50,8 @@ app.get('/', function(req, res) {
 		btc : btc_rate,
 		eth : eth_rate,
 		xrp : xrp_rate,
-		timestamp : current_timestamp
+		timestamp : current_timestamp,
+		difficulty: difficulty
 	};
     res.send(JSON.stringify(ret));
 });
