@@ -3,8 +3,8 @@
 Thank you for your interest in contributing to CryptoMiner! There are many ways to contribute, and we appreciate all of them.
 
 ## Short Links to Important Resources:
-* [Bug report](https://www.google.com)
-* Communcations and contacts: Rishabh Asthana {asthana4@illinois.edu}, Wanli Wang {wwang128@illinois.edu}
+* [Bug Report](https://www.google.com)
+* Communcations and Contacts: Rishabh Asthana {asthana4@illinois.edu}, Wanli Wang {wwang128@illinois.edu}
 
 ## How to submit changes: 
 First of all, we recommend you to read this [guideline](https://www.google.com) first for how to contribute. Here are the essential steps to follow when you try to submit the changes: 
