@@ -3,9 +3,8 @@
 Thank you for your interest in contributing to CryptoMiner! There are many ways to contribute, and we appreciate all of them.
 
 ## Short Links to Important Resources:
-* [How to submit changes](#How to submit changes)
-* bugs: issue tracker / bug report tool
-* communcations: forum link, developer list, IRC/email, Slack, etc.
+* [Bug report](https://www.google.com)
+* [Communcations and contacts]  
 
 ## How to submit changes: 
 First of all, we recommend you to read this [guideline](https://www.google.com) first for how to contribute. Here are the essential steps to follow when you try to submit the changes: 
@@ -27,14 +26,3 @@ Guidelines for bug reports:
 
 * Isolate the problem — create a reduced test case and a live example.
     
-## New Feature Requirements
-_Any guidelines for proposing the feature_
-
-## Style Guide / Coding conventions 
-
-## Code of Conduct
-
-## Recognition model
-_How will contributors be recognized?_
-
-## Where can I ask for help?
