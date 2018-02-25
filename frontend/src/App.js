@@ -8,6 +8,7 @@ import axios from 'axios';
 
 //let current = "";
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 class App extends Component {
 
@@ -101,11 +102,15 @@ class App extends Component {
           axios.get("http://localhost:8080/")
           .then(function(response){
            let data = response.data;
-           let new_btc_amt = btc_amt + machines.map(function(item){return item*(1/data.difficulty)}).reduce(reducer);
-           let new_eth_amt = eth_amt + machines.map(function(item){return item*((Math.random()*2)/data.difficulty)}).reduce(reducer);
-           let new_xrp_amt = xrp_amt + machines.map(function(item){return item*((Math.random()*10)/data.difficulty)}).reduce(reducer);
+           let new_btc_amt = btc_amt + machines.map(function(item, index){return item*(1/data.difficulty)}).reduce(reducer);
+           let new_eth_amt = eth_amt + machines.map(function(item, index){return item*((Math.random()*2*(index+1) )/data.difficulty)}).reduce(reducer);
+           let new_xrp_amt = xrp_amt + machines.map(function(item, index){return item*((Math.random()*10*(index+1))/data.difficulty)}).reduce(reducer);
            let net_asset_value = usd_amt + (new_btc_amt * data.btc) + (new_eth_amt * data.eth) + (new_xrp_amt * data.xrp);
-          self.setState({btc: data.btc, eth: data.eth, xrp: data.xrp, timestamp: data.timestamp, difficulty: data.difficulty, total: net_asset_value, btc_amt: new_btc_amt, eth_amt: new_eth_amt, xrp_amt: new_xrp_amt});
+           let date = data.timestamp * 1000;
+           date = new Date(date);
+           date = date.getDate() + "-" + months[date.getMonth()] + "-" + date.getFullYear();
+              
+          self.setState({btc: data.btc, eth: data.eth, xrp: data.xrp, timestamp: date, difficulty: data.difficulty, total: net_asset_value, btc_amt: new_btc_amt, eth_amt: new_eth_amt, xrp_amt: new_xrp_amt});
           //console.log(JSON.stringify(self.state))
           });
       },1000);
@@ -114,8 +119,8 @@ class App extends Component {
   
     
   render() {
-    let vals = [this.state.btc, this.state.eth, this.state.xrp];
-    let coin_amounts = [this.state.btc_amt, this.state.eth_amt, this.state.xrp_amt];
+    let vals = [this.state.btc, this.state.xrp, this.state.eth];
+    let coin_amounts = [this.state.btc_amt, this.state.eth_amt, this.state.xrp_amt, this.state.usd_amt];
     return (
       <div className="main">
         <div className="main-left">
@@ -130,7 +135,8 @@ class App extends Component {
                       {buy:this.buy_xrp, sell:this.sell_xrp},
                       {buy:this.buy_eth, sell:this.sell_eth}
                     ]
-                }
+                } 
+                date={this.state.timestamp}
                 />
             {/*<Coin/>*/}
           </div>

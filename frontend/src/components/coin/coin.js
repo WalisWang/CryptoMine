@@ -18,7 +18,7 @@ class Coin extends Component {
         return(
             <div className="coin-item">
                 {this.props.coin_values.map((val, index) => (
-                    <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
+                    <div key={index} style={{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
                         <img src={this.state.types[index]} className="coin-icon">
                         </img>
                         <p style={{minWidth: "100px", padding: "5px", flex:"2", color: "#b83432"}}>${val}</p>
@@ -28,6 +28,7 @@ class Coin extends Component {
                         </div>
                     </div>
                 ))}
+                <h1 style={{textAlign:"center",fontSize:"2em"}}>{this.props.date}</h1>
             </div>
         )
     }
