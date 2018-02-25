@@ -23,8 +23,8 @@ class Coin extends Component {
                         </img>
                         <p style={{minWidth: "100px", padding: "5px", flex:"2", color: "#b83432"}}>${val}</p>
                         <div id="boi">
-                        <button className="coin-button"> BUY </button>
-                        <button className="coin-button"> SELL </button>
+                        <button className="coin-button" onClick={()=>this.props.fns[index].buy()}> BUY </button>
+                        <button className="coin-button" onClick={()=>this.props.fns[index].sell()}> SELL </button>
                         </div>
                     </div>
                 ))}
