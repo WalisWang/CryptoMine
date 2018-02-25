@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './styles.css'
 import bitcoin from '../../assets/bitcoin.png'
-import dogecoin from '../../assets/dogecoin.png'
+import ethereum from '../../assets/ethereum.png'
 import ripple from '../../assets/ripplecoin.png'
 
 
@@ -10,7 +10,7 @@ class Coin extends Component {
     constructor(props) {
         super();
         this.state = {
-            types: [bitcoin, ripple, dogecoin]
+            types: [bitcoin, ripple, ethereum]
         }
     }
 
