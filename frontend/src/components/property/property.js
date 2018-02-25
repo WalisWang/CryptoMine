@@ -4,6 +4,7 @@ import total from '../../assets/money-bag.png'
 import bitcoin from '../../assets/bitcoin.png'
 import ethereum from '../../assets/ethereum.png'
 import ripple from '../../assets/ripplecoin.png'
+import fund from '../../assets/fund.png'
 
 
 class Property extends Component {
@@ -13,7 +14,7 @@ class Property extends Component {
         this.state = {
             total: "$" + Number(10000).toFixed(3).toLocaleString('en'),
             bit: 0,
-            dog: 0,
+            eth: 0,
             rip: 0,
         }
     }
@@ -25,7 +26,7 @@ class Property extends Component {
         let xrp = props.amounts[2].toFixed(2).toLocaleLowerCase('en');
 
         console.log(JSON.stringify(props));
-        this.setState({total: total, bit:btc, dog: eth, rip:xrp});
+        this.setState({total: total, bit:btc, eth: eth, rip:xrp});
     }
 
     render() {
@@ -39,20 +40,29 @@ class Property extends Component {
                     </div>
                 </div>
                 <div className="bit">
-                    <div className="bit-with-text">
-                        <img src={bitcoin} alt="bit" className="bit-icon"></img>
-                        <p className="img-des">bitcoin</p>
-                        <p>{this.state.bit}</p>
+                    <div className="fund-item">
+                        <div style={{flex: 1}}>
+                            <img src={fund} alt="fund" className="fund-icon"></img>   
+                            <p className="img-des">Fund</p>
+                        </div>
+                        <div className="fund-val">$457567</div>
                     </div>
-                    <div className="bit-with-text">
-                        <img src={ripple} alt="ripple" className="bit-icon"></img>
-                        <p className="img-des">ripple</p>
-                        <p>{this.state.rip}</p>
-                    </div>
-                    <div className="bit-with-text">
-                        <img src={ethereum} alt="ethereum" className="bit-icon"></img>
-                        <p className="img-des">ethereum</p>
-                        <p>{this.state.dog}</p>
+                    <div style={{flex: 1, display: "flex", flexDirection: "row"}}>
+                        <div className="bit-with-text">
+                            <img src={bitcoin} alt="bit" className="bit-icon"></img>
+                            <p className="img-des">Bitcoin</p>
+                            <p>{this.state.bit}</p>
+                        </div>
+                        <div className="bit-with-text">
+                            <img src={ripple} alt="ripple" className="bit-icon"></img>
+                            <p className="img-des">Ripple</p>
+                            <p>{this.state.rip}</p>
+                        </div>
+                        <div className="bit-with-text">
+                            <img src={ethereum} alt="ethereum" className="bit-icon"></img>
+                            <p className="img-des">Ethereum</p>
+                            <p>{this.state.eth}</p>
+                        </div>
                     </div>
                 </div>
             </div>
