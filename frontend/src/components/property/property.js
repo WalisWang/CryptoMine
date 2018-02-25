@@ -12,10 +12,10 @@ class Property extends Component {
     constructor(props) {
         super();
         this.state = {
-            total: "$" + Number(10000).toFixed(3).toLocaleString('en'),
-            bit: 0,
-            eth: 0,
-            rip: 0,
+            total: "$" + Number(10000).toFixed(2).toLocaleString('en'),
+            bit: 0.00,
+            dog: 0.00,
+            rip: 0.00,
         }
     }
     
