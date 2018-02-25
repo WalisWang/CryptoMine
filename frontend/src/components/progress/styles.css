@@ -24,7 +24,13 @@
 }
 
 .mining-left  {
-  flex: 1.5;
+  flex: 1;
+}
+
+.mining-mid  {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .mining-right  {
@@ -35,6 +41,7 @@
 
 .mining-tag {
   flex: 1;
+  border: none;
 }
 
 .mine-button {
@@ -71,6 +78,15 @@
   background-color: #617db5;
   border: none;
   font-size: 18px;
+}
+
+.speed {
+  position: relative;
+}
+
+.speed:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 @keyframes float {

@@ -42,6 +42,7 @@
   flex: 2;
   font-size: 32px;
   font-weight: bold;
+  position: relative;
 }
 
 .mon-icon {
@@ -65,4 +66,16 @@
 .number {
   font-size: 40px;
   font-weight: bold;
+  position: relative;
 }
+
+.number:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.fund-val:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
