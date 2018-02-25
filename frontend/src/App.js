@@ -152,16 +152,9 @@ class App extends Component {
           <div className="mining">
             <Progress speed={1} ex={ex0} index={0} buy_machine={this.buy_machine} owned={this.state.machines_owned[0]} btc={this.state.btc}/>
             <Progress speed={2} ex={ex1} index={1} buy_machine={this.buy_machine} owned={this.state.machines_owned[1]} btc={this.state.btc}/>
-<<<<<<< HEAD
-            <Progress speed={3}  ex={ex2} index={2} buy_machine={this.buy_machine} owned={this.state.machines_owned[2]} btc={this.state.btc}/>
-            <Progress speed={4} ex={ex3} index={3} buy_machine={this.buy_machine} owned={this.state.machines_owned[3]} btc={this.state.btc}/>
-            <Progress speed={5} ex={ex4} index={4} buy_machine={this.buy_machine} owned={this.state.machines_owned[4]} btc={this.state.btc}/>
-=======
             <Progress speed={4}  ex={ex2} index={2} buy_machine={this.buy_machine} owned={this.state.machines_owned[2]} btc={this.state.btc}/>
             <Progress speed={8} ex={ex3} index={3} buy_machine={this.buy_machine} owned={this.state.machines_owned[3]} btc={this.state.btc}/>
             <Progress speed={16} ex={ex4} index={4} buy_machine={this.buy_machine} owned={this.state.machines_owned[4]} btc={this.state.btc}/>
-
->>>>>>> 1dcac6850b2ea7d4a8910b14d70bf895eea3b364
           </div>
         </div>
       </div>

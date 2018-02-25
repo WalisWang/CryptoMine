@@ -89,6 +89,20 @@
   opacity: 1;
 }
 
+.mine-price {
+  position: relative;
+}
+
+
+.mine-price .tooltiptext {
+  width: 300px;
+}
+
+.mine-price:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 @keyframes float {
 	0% {
 		transform: translatey(0px);

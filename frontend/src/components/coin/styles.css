@@ -30,6 +30,23 @@
   width: 50px;
 }
 
+.coin-val {
+  min-width: 100px;
+  padding: 5px;
+  flex: 2;
+  color: #b83432;
+  position: relative;
+}
+
+.coin-val .tooltiptext {
+  left: 0%;
+}
+
+.coin-val:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 #boi{
   display: flex;
   margin-left: auto;
