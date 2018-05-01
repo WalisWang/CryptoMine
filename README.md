@@ -5,7 +5,7 @@ CryptoMine is a game that simulates historical cryptocurrency data and allows us
 ## HOW TO PLAY
 The game loads up with you have 5000 USD at hand, and a particular date (as decided by our looping backend server). You as a miner are allowed to buy mining machines, or buy/sell the currencies directly. The goal is to reach the largest Total Assets value possiible
 ## USAGE
-To demo, here's a live version : http://www.crypto-miner.website/ or visit 67.205.176.35
+To demo, here's a live version : https://crypto-miner-196315.appspot.com/ or visit 67.205.176.35
 To run from source, follow build/installation instructions
 
 ## BUILD/INSTALLATION INSTRUCTIONS
